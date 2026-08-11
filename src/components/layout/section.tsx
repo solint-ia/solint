@@ -5,9 +5,9 @@ export type SectionTone = "dark" | "light";
 export type SectionSpacing = "default" | "compact" | "wide";
 
 const spacing: Record<SectionSpacing, string> = {
-  default: "py-[clamp(80px,10vw,140px)]",
-  compact: "py-[clamp(72px,9vw,120px)]",
-  wide: "py-[clamp(88px,11vw,150px)]",
+  default: "py-[clamp(44px,7vw,110px)]",
+  compact: "py-[clamp(36px,5.5vw,85px)]",
+  wide: "py-[clamp(52px,8vw,125px)]",
 };
 
 interface SectionProps {

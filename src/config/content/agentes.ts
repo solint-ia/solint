@@ -35,7 +35,7 @@ export const agentFeed = {
     {
       title: "Lead identificado",
       quote: '"Preciso de atendimento para minha equipe comercial."',
-      tag: "WhatsApp Webhook",
+      tag: "WhatsApp Oficial",
       timestamp: "10:42:01",
       type: "incoming",
     },

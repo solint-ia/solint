@@ -7,24 +7,9 @@ import {
 } from "lucide-react";
 import { agentFeed } from "@/config/content/agentes";
 
-/** Linha vertical com um pulso que desce, ligando dois eventos do feed. */
-function FeedConnector({ delay }: { delay: number }) {
-  return (
-    <div
-      aria-hidden="true"
-      className="relative my-0.5 ml-4.5 h-6 w-px bg-[linear-gradient(180deg,rgb(53_217_255/0.5),rgb(53_217_255/0.12))]"
-    >
-      <span
-        className="animate-travel-y absolute -left-[3px] size-1.5 rounded-full bg-accent shadow-[0_0_10px_3px_rgb(53_217_255/0.75)]"
-        style={{ animationDuration: "3.2s", animationDelay: `${delay}s` }}
-      />
-    </div>
-  );
-}
-
 /**
  * Feed "ao vivo" do agente exibido no hero de Agentes de IA.
- * Estrutura de AI Operations Console com logs, raciocínio semântico e handoff.
+ * Estrutura de AI Operations Console com linha laser contínua e handoff comercial.
  */
 export function AgentFeed() {
   const [event1, event2, event3] = agentFeed.events;
@@ -61,11 +46,20 @@ export function AgentFeed() {
           </div>
         </div>
 
-        {/* Corpo do feed com eventos estruturados */}
-        <div className="flex flex-col p-5">
+        {/* Corpo do feed com trilha laser vertical contínua */}
+        <div className="relative flex flex-col gap-5 p-5">
+          {/* Linha laser vertical contínua que atravessa todos os 4 nós */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[38px] top-9 bottom-12 w-[1.5px] -translate-x-1/2 bg-[linear-gradient(to_bottom,#35D9FF_0%,#168CFF_50%,#FFB65C_100%)] shadow-[0_0_8px_rgb(53_217_255/0.4)]"
+          >
+            {/* Feixe animado de pulso descendente */}
+            <div className="animate-flow absolute top-0 left-0 h-20 w-full bg-[linear-gradient(to_bottom,transparent,#FFFFFF,transparent)]" />
+          </div>
+
           {/* EVENTO 1: Lead Identificado (Trigger / Input) */}
-          <div className="animate-rowpulse flex items-start gap-3" style={{ animationDelay: "0s" }}>
-            <div className="flex size-9 flex-none items-center justify-center rounded-xl bg-accent/12 text-accent shadow-[0_0_12px_rgb(53_217_255/0.3)]">
+          <div className="animate-rowpulse relative z-10 flex items-start gap-3.5" style={{ animationDelay: "0s" }}>
+            <div className="flex size-9 flex-none items-center justify-center rounded-xl border border-accent/25 bg-[#09111E] text-accent shadow-[0_0_12px_rgb(53_217_255/0.3)]">
               <MessageSquare className="size-4.5" />
             </div>
             <div className="flex-1">
@@ -85,11 +79,9 @@ export function AgentFeed() {
             </div>
           </div>
 
-          <FeedConnector delay={0} />
-
           {/* EVENTO 2: Intenção Reconhecida (AI Reasoning & Semantic Analysis) */}
-          <div className="animate-rowpulse flex items-start gap-3" style={{ animationDelay: "2s" }}>
-            <div className="flex size-9 flex-none items-center justify-center rounded-xl bg-accent/12 text-accent shadow-[0_0_12px_rgb(53_217_255/0.3)]">
+          <div className="animate-rowpulse relative z-10 flex items-start gap-3.5" style={{ animationDelay: "2s" }}>
+            <div className="flex size-9 flex-none items-center justify-center rounded-xl border border-accent/25 bg-[#09111E] text-accent shadow-[0_0_12px_rgb(53_217_255/0.3)]">
               <BrainCircuit className="size-4.5" />
             </div>
             <div className="flex-1">
@@ -107,11 +99,9 @@ export function AgentFeed() {
             </div>
           </div>
 
-          <FeedConnector delay={1.1} />
-
           {/* EVENTO 3: Resposta Enviada (Autonomous Action) */}
-          <div className="animate-rowpulse flex items-start gap-3" style={{ animationDelay: "4s" }}>
-            <div className="flex size-9 flex-none items-center justify-center rounded-xl bg-accent/12 text-accent shadow-[0_0_12px_rgb(53_217_255/0.3)]">
+          <div className="animate-rowpulse relative z-10 flex items-start gap-3.5" style={{ animationDelay: "4s" }}>
+            <div className="flex size-9 flex-none items-center justify-center rounded-xl border border-accent/25 bg-[#09111E] text-accent shadow-[0_0_12px_rgb(53_217_255/0.3)]">
               <Zap className="size-4.5" />
             </div>
             <div className="flex-1">
@@ -130,14 +120,12 @@ export function AgentFeed() {
             </div>
           </div>
 
-          <FeedConnector delay={2.2} />
-
           {/* EVENTO 4: Handoff Comercial (Destino com destaque âmbar) */}
           <div
-            className="animate-rowpulse flex items-start gap-3 rounded-xl border border-amber/35 bg-[linear-gradient(145deg,rgb(22_20_16/0.9),rgb(12_14_22/0.88))] p-3.5 shadow-[0_0_24px_rgb(255_182_92/0.14)]"
+            className="animate-rowpulse relative z-10 flex items-start gap-3.5 rounded-xl border border-amber/35 bg-[linear-gradient(145deg,rgb(22_20_16/0.9),rgb(12_14_22/0.88))] p-3.5 shadow-[0_0_24px_rgb(255_182_92/0.14)]"
             style={{ animationDelay: "6s" }}
           >
-            <div className="flex size-9 flex-none items-center justify-center rounded-xl bg-amber/15 text-amber shadow-[0_0_12px_rgb(255_182_92/0.35)]">
+            <div className="flex size-9 flex-none items-center justify-center rounded-xl border border-amber/30 bg-amber/15 text-amber shadow-[0_0_12px_rgb(255_182_92/0.35)]">
               <Flame className="size-4.5" />
             </div>
             <div className="flex-1">

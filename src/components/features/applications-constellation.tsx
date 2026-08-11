@@ -38,10 +38,10 @@ export function ApplicationsConstellation({
 
   return (
     <div className="relative">
-      <div className="relative z-1 grid grid-cols-1 gap-3.5 lg:grid-cols-4 lg:[grid-auto-rows:minmax(104px,auto)]">
+      <div className="relative z-1 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4 lg:[grid-auto-rows:minmax(104px,auto)]">
         {/* CARD PRINCIPAL ATIVO (Destaque Herói com timeline) */}
         <div
-          className="flex flex-col justify-between rounded-3xl border-2 border-accent/40 bg-[linear-gradient(150deg,rgb(14_26_44/0.95),rgb(8_14_22/0.9))] p-7 shadow-[0_0_50px_rgb(22_140_255/0.18)] backdrop-blur-xl lg:col-span-2 lg:col-start-1 lg:row-span-2 lg:row-start-1"
+          className="flex flex-col justify-between rounded-3xl border-2 border-accent/40 bg-[linear-gradient(150deg,rgb(14_26_44/0.95),rgb(8_14_22/0.9))] p-6 sm:p-7 shadow-[0_0_50px_rgb(22_140_255/0.18)] backdrop-blur-xl sm:col-span-2 lg:col-span-2 lg:col-start-1 lg:row-span-2 lg:row-start-1"
         >
           <div>
             <div className="mb-4 flex items-center justify-between gap-3">

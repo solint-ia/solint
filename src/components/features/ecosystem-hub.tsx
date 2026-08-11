@@ -52,11 +52,11 @@ export function EcosystemHub({
         <g ref={groupRef} />
       </svg>
 
-      <div className="relative z-1 mx-auto grid max-w-[940px] grid-cols-1 items-center gap-4.5 lg:grid-cols-[1.1fr_1.35fr_1.1fr]">
+      <div className="relative z-1 mx-auto grid max-w-[1120px] grid-cols-1 items-center gap-4 sm:grid-cols-2 lg:grid-cols-[1.05fr_1.35fr_1.05fr] lg:gap-x-14 lg:gap-y-12">
         {/* HUB CENTRAL ORQUESTRADOR COM ANÉIS ORBITAIS */}
         <div
           {...{ [HUB_NODE_ATTR]: "" }}
-          className="relative overflow-hidden rounded-3xl border-2 border-amber/40 bg-[linear-gradient(150deg,rgb(20_26_38/0.95),rgb(10_13_18/0.9))] p-6 text-center shadow-[0_0_60px_rgb(255_182_92/0.18)] backdrop-blur-xl lg:col-start-2 lg:row-start-2"
+          className="relative overflow-hidden rounded-3xl border-2 border-amber/40 bg-[linear-gradient(150deg,rgb(20_26_38/0.95),rgb(10_13_18/0.9))] p-6 text-center shadow-[0_0_60px_rgb(255_182_92/0.18)] backdrop-blur-xl sm:col-span-2 lg:col-span-1 lg:col-start-2 lg:row-start-2"
         >
           {/* Anéis concêntricos decorativos */}
           <div
@@ -87,16 +87,28 @@ export function EcosystemHub({
           </div>
         </div>
 
+        {/* Barramento Conector Luminoso para Mobile (liga o Hub aos módulos) */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none relative flex h-6 w-full items-center justify-center sm:col-span-2 lg:hidden"
+        >
+          <div className="h-full w-[2px] bg-[linear-gradient(to_bottom,#FFB65C,#35D9FF)] shadow-[0_0_8px_rgb(53_217_255/0.5)]" />
+          <span className="size-2 rounded-full bg-accent shadow-[0_0_8px_rgb(53_217_255/0.8)] absolute top-1/2 -translate-y-1/2" />
+        </div>
+
         {/* 4 SATÉLITES DE TECNOLOGIAS E INTEGRAÇÕES */}
         {groups.map((group, index) => (
           <div
             key={group.label}
             {...{ [SPOKE_NODE_ATTR]: "" }}
             className={cn(
-              "group rounded-2xl border border-accent/18 bg-panel/75 p-5 shadow-[0_6px_20px_rgb(2_8_18/0.35)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-accent/45 hover:bg-[#0E2038]/85 hover:shadow-[0_10px_30px_rgb(22_140_255/0.12)]",
+              "group relative rounded-2xl border border-accent/18 bg-panel/75 p-5 shadow-[0_6px_20px_rgb(2_8_18/0.35)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-accent/45 hover:bg-[#0E2038]/85 hover:shadow-[0_10px_30px_rgb(22_140_255/0.12)]",
               spokePlacement[index],
             )}
           >
+            {/* Ponto conector luminoso no topo do card no mobile */}
+            <div className="absolute -top-1.5 left-1/2 size-2.5 -translate-x-1/2 rounded-full border border-ink bg-accent shadow-[0_0_8px_rgb(53_217_255/0.8)] lg:hidden" />
+
             <div className="mb-3.5 flex items-center justify-between gap-2 border-b border-accent/10 pb-2.5">
               <div className="flex items-center gap-2">
                 <CategoryBadgeIcon category={group.category} />
