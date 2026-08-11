@@ -5,8 +5,8 @@ import { siteConfig } from "./site";
 export const CONTACT_ANCHOR = "/#contato";
 
 export const navLinks: readonly NavLink[] = [
-  { key: "prospect", label: "Prospect", href: "/prospect" },
   { key: "home", label: "Home", href: "/" },
+  { key: "prospect", label: "Prospect", href: "/prospect" },
   { key: "agentes", label: "Agentes de IA", href: "/agentes-ia" },
   { key: "solucoes", label: "Soluções", href: "/solucoes" },
 ] as const;
