@@ -1,0 +1,402 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design tokens — Solint
+   Estética futurista/tech: fundo escuro azul-marinho, acentos ciano/azul,
+   âmbar reservado para etapas finais, conclusão e destaques.
+   ========================================================================== */
+@theme {
+  /* Tipografia */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-inter), sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Fundo e superfícies (neutras frias, não azul saturado) */
+  --color-ink: #050a14;
+  --color-ink-deep: #040913;
+  --color-panel: #0d121a;
+  --color-panel-2: #0f141d;
+  --color-panel-3: #121a28;
+  --color-panel-4: #0c1017;
+  --color-surface-hi: #141a24;
+
+  /* Acento primário */
+  --color-accent: #35d9ff;
+  --color-accent-soft: #8ae3ff;
+  --color-accent-pale: #b7e9ff;
+  --color-accent-flow: #9cebff;
+  --color-blue: #168cff;
+  --color-blue-deep: #174eff;
+  --color-blue-soft: #5fb6ff;
+
+  /* Acento secundário — etapa final / conclusão */
+  --color-amber: #ffb65c;
+  --color-amber-soft: #ffd9a6;
+
+  /* Texto sobre fundo escuro */
+  --color-fg: #edf1f5;
+  --color-fg-bright: #fafcff;
+  --color-fg-strong: #e4e9ef;
+  --color-muted: #a3aebd;
+  --color-muted-2: #94a3b4;
+  --color-steel: #93a9c7;
+  --color-steel-2: #8398b6;
+  --color-nav: #b9cce6;
+  --color-nav-2: #a9bed8;
+  --color-faint: #6b7480;
+  --color-faint-2: #5e6773;
+  --color-faint-3: #78838f;
+  --color-marker: #3d587a;
+  --color-marker-2: #5b6b84;
+  --color-marker-3: #67809e;
+
+  /* Faixa clara (1x por página) */
+  --color-paper: #f4f7fb;
+  --color-paper-ink: #0a1424;
+  --color-paper-body: #4a5568;
+  --color-paper-muted: #5b6472;
+  --color-paper-faint: #7a8593;
+  --color-paper-tag: #516075;
+
+  /* Curvas de movimento */
+  --ease-out-solint: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Animações */
+  --animate-drift: sl-drift 12s ease-in-out infinite;
+  --animate-glowpan: sl-glowpan 12s ease-in-out infinite;
+  --animate-mesh: sl-mesh 34s ease-in-out infinite;
+  --animate-scan: sl-scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  --animate-caret: sl-caret 1s steps(1) infinite;
+  --animate-flow: sl-flow 12s linear infinite;
+  --animate-flow-hub: sl-flow-hub 5s linear infinite;
+  --animate-travel-y: sl-travel-y 3.2s linear infinite;
+  --animate-node: sl-node 3s ease-in-out infinite;
+  --animate-node-amber: sl-node-amber 3s ease-in-out infinite;
+  --animate-status: sl-status 6s ease-in-out infinite;
+  --animate-status-amber: sl-status-amber 6s ease-in-out infinite;
+  --animate-rowpulse: sl-rowpulse 8s ease-in-out infinite;
+  --animate-logo-pulse: sl-logo-pulse 2.8s ease-in-out infinite;
+  --animate-breathe: sl-breathe 9s ease-in-out infinite;
+  --animate-float: sl-float 11s ease-in-out infinite;
+  --animate-core-pulse: sl-core-pulse 6.5s ease-in-out infinite;
+  --animate-ring-a: sl-ring-a 34s linear infinite;
+  --animate-ring-b: sl-ring-b 46s linear infinite;
+  --animate-ring-c: sl-ring-c 27s linear infinite;
+  --animate-lattice: sl-lattice 60s linear infinite;
+  --animate-lattice-rev: sl-lattice-rev 90s linear infinite;
+  --animate-dash: sl-dash 14s linear infinite;
+  --animate-marquee: sl-marquee 32s linear infinite;
+  --animate-marquee-rev: sl-marquee-rev 32s linear infinite;
+}
+
+/* ==========================================================================
+   Keyframes
+   ========================================================================== */
+@keyframes sl-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes sl-marquee-rev {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sl-drift {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate3d(0, -22px, 0);
+  }
+}
+
+@keyframes sl-glowpan {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes sl-mesh {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.34;
+  }
+  50% {
+    transform: translate(-50.8%, -50.6%) scale(1.035);
+    opacity: 0.52;
+  }
+}
+
+@keyframes sl-scan {
+  0%,
+  55% {
+    transform: translateX(-140%) rotate(6deg);
+  }
+  95%,
+  100% {
+    transform: translateX(480%) rotate(6deg);
+  }
+}
+
+@keyframes sl-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sl-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+@keyframes sl-flow-hub {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+
+@keyframes sl-travel-y {
+  0% {
+    top: -6px;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% + 2px);
+    opacity: 0;
+  }
+}
+
+@keyframes sl-node {
+  0%,
+  100% {
+    box-shadow: 0 0 10px 2px rgb(53 217 255 / 0.35);
+  }
+  50% {
+    box-shadow: 0 0 18px 5px rgb(53 217 255 / 0.65);
+  }
+}
+
+@keyframes sl-node-amber {
+  0%,
+  100% {
+    box-shadow: 0 0 12px 3px rgb(255 182 92 / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgb(255 182 92 / 0.7);
+  }
+}
+
+@keyframes sl-status {
+  0%,
+  100% {
+    border-color: rgb(53 217 255 / 0.22);
+    box-shadow: none;
+    color: #aeb9c6;
+  }
+  22%,
+  38% {
+    border-color: rgb(53 217 255 / 0.65);
+    box-shadow: 0 0 22px rgb(53 217 255 / 0.32);
+    color: #ffffff;
+  }
+}
+
+@keyframes sl-status-amber {
+  0%,
+  100% {
+    border-color: rgb(255 182 92 / 0.3);
+    box-shadow: none;
+    color: #ffd9a6;
+  }
+  22%,
+  38% {
+    border-color: rgb(255 182 92 / 0.75);
+    box-shadow: 0 0 24px rgb(255 182 92 / 0.4);
+    color: #fff3e0;
+  }
+}
+
+@keyframes sl-rowpulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  18%,
+  34% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes sl-logo-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgb(255 182 92 / 0.4));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 20px rgb(255 182 92 / 0.75));
+  }
+}
+
+@keyframes sl-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes sl-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate3d(0, -16px, 0);
+    opacity: 0.8;
+  }
+}
+
+@keyframes sl-core-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@keyframes sl-ring-a {
+  from {
+    transform: rotateX(73deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(73deg) rotateZ(360deg);
+  }
+}
+
+@keyframes sl-ring-b {
+  from {
+    transform: rotateY(58deg) rotateX(70deg) rotateZ(360deg);
+  }
+  to {
+    transform: rotateY(58deg) rotateX(70deg) rotateZ(0deg);
+  }
+}
+
+@keyframes sl-ring-c {
+  from {
+    transform: rotateY(-56deg) rotateX(68deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(-56deg) rotateX(68deg) rotateZ(360deg);
+  }
+}
+
+@keyframes sl-lattice {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sl-lattice-rev {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes sl-dash {
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* ==========================================================================
+   Movimento reduzido
+   Rede de segurança global: os hooks que animam via JS também consultam
+   `usePrefersReducedMotion` antes de iniciar.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

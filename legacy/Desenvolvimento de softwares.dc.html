@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<title>Desenvolvimento de softwares | Solint</title>
+<meta name="description" content="Landing pages, sites, e-commerces, sistemas web, dashboards e plataformas personalizadas, desenvolvidos sob medida pela Solint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#050A14;color:#EDF1F5;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}
+a{color:#35D9FF;text-decoration:none}
+a:hover{color:#8AE3FF}
+:focus-visible{outline:2px solid #35D9FF;outline-offset:3px;border-radius:4px}
+@keyframes sl-mesh{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.34}50%{transform:translate(-50.8%,-50.6%) scale(1.035);opacity:.52}}
+@keyframes sl-glowpan{0%,100%{opacity:.55}50%{opacity:.85}}
+@keyframes sl-node{0%,100%{box-shadow:0 0 10px 2px rgba(53,217,255,.35)}50%{box-shadow:0 0 18px 5px rgba(53,217,255,.65)}}
+@keyframes sl-caret{0%,49%{opacity:1}50%,100%{opacity:0}}
+.port-grid:hover .port-card{opacity:.5}
+.port-grid .port-card:hover{opacity:1}
+@keyframes sl-node-amber{0%,100%{box-shadow:0 0 12px 3px rgba(255,182,92,.4)}50%{box-shadow:0 0 20px 6px rgba(255,182,92,.7)}}
+@keyframes sl-travel-y{0%{top:-6px;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:calc(100% + 2px);opacity:0}}
+.bg-card{transition:opacity .32s ease, transform .35s cubic-bezier(.22,.61,.36,1), border-color .3s ease, box-shadow .35s ease}
+.bg-grid:hover .bg-card{opacity:.48 !important}
+.bg-grid .bg-card:hover{opacity:1 !important;transform:translateY(-5px) !important;border-color:rgba(53,217,255,.48) !important;box-shadow:0 20px 52px rgba(2,8,18,.55), 0 0 46px rgba(22,140,255,.14) !important}
+.bg-more{max-height:0;opacity:0;transform:translateY(6px);overflow:hidden;transition:max-height .42s cubic-bezier(.22,.61,.36,1), opacity .3s ease, transform .42s cubic-bezier(.22,.61,.36,1)}
+.bg-card:hover .bg-more{max-height:160px;opacity:1;transform:none}
+.bg-line{transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.bg-card:hover .bg-line{transform:scaleX(1)}
+@media (max-width:860px){.bg-card{grid-column:span 12 !important;grid-row:auto !important}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background:#050A14;overflow:hidden">
+<div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(900px 620px at 76% 6%, rgba(22,140,255,.11), rgba(5,10,20,0) 62%), radial-gradient(760px 520px at 6% 54%, rgba(23,78,255,.08), rgba(5,10,20,0) 60%)"></div>
+
+<dc-import name="SiteHeader" active="dev" hint-size="100%,72px"></dc-import>
+
+<main style="position:relative;z-index:1">
+
+<section style="position:relative;padding:184px 24px 96px;overflow:hidden">
+  <span aria-hidden="true" style="position:absolute;top:104px;right:28px;font:400 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;color:#5B6B84;z-index:2">/01 — soluções</span>
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;-webkit-mask-image:radial-gradient(96% 92% at 30% 38%, #000 0%, rgba(0,0,0,.62) 52%, rgba(0,0,0,0) 86%);mask-image:radial-gradient(96% 92% at 30% 38%, #000 0%, rgba(0,0,0,.62) 52%, rgba(0,0,0,0) 86%)">
+    <div style="position:absolute;inset:-10%;background:repeating-linear-gradient(0deg, rgba(53,217,255,.05) 0 1px, rgba(0,0,0,0) 1px 64px), repeating-linear-gradient(90deg, rgba(53,217,255,.05) 0 1px, rgba(0,0,0,0) 1px 64px);opacity:.9"></div>
+    <img data-mesh data-mesh-speed=".16" src="assets/hero-mesh.svg" alt="" style="position:absolute;left:50%;top:50%;width:min(2600px,200%);transform:translate(-50%,-50%);opacity:.34">
+    <img src="assets/hero-mesh.svg" alt="" style="position:absolute;left:50%;top:50%;width:min(3400px,260%);transform:translate(-50%,-50%);opacity:.14;filter:blur(7px);animation:sl-mesh 34s ease-in-out infinite">
+  </div>
+  <div style="position:relative;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(36px,5vw,64px);align-items:center">
+    <div>
+
+      <h1 style="margin:0 0 24px;font:600 clamp(2.3rem,4.6vw,3.6rem)/1.08 Sora,Inter,sans-serif;letter-spacing:-.035em;color:#FFFFFF;text-wrap:balance">Produtos digitais feitos para <span ref="{{ typeRef }}" style="background:linear-gradient(96deg,#35D9FF 0%,#168CFF 60%,#8AB6FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent">rodar e crescer</span>.</h1>
+      <p style="margin:0 0 20px;max-width:560px;font:300 clamp(1rem,1.3vw,1.16rem)/1.68 Inter,sans-serif;color:#A3AEBD;text-wrap:pretty">A Solint desenvolve experiências digitais modernas, rápidas, responsivas e alinhadas aos objetivos do negócio.</p>
+      <p style="margin:0 0 40px;max-width:560px;font:300 clamp(1rem,1.3vw,1.16rem)/1.68 Inter,sans-serif;color:#A3AEBD;text-wrap:pretty">Da landing page que precisa converter ao sistema que sustenta a operação inteira.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <a href="Solint%20Landing.dc.html#contato" style="display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;border-radius:12px;background:linear-gradient(100deg,#174EFF 0%,#168CFF 52%,#35D9FF 100%);color:#071018;font:600 15px/1 Inter,sans-serif;box-shadow:0 10px 34px rgba(22,140,255,.30);transition:transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s ease" style-hover="transform:translateY(-3px);box-shadow:0 18px 46px rgba(53,217,255,.42);color:#071018">Falar sobre meu projeto</a>
+        <a href="#portfolio" style="display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;border-radius:12px;border:1px solid rgba(53,217,255,.26);background:rgba(13,18,26,.55);color:#E4E9EF;font:500 15px/1 Inter,sans-serif;transition:transform .25s cubic-bezier(.22,.61,.36,1), border-color .25s ease, background .25s ease" style-hover="transform:translateY(-3px);border-color:rgba(53,217,255,.55);background:rgba(17,24,36,.75);color:#FFFFFF">Ver portfólio</a>
+      </div>
+    </div>
+    <div aria-hidden="true" style="position:relative;max-width:520px;width:100%;margin:0 auto;border:1px solid rgba(53,217,255,.20);border-radius:16px;overflow:hidden;background:rgba(10,14,20,.8);box-shadow:0 30px 70px rgba(2,8,18,.6)">
+      <div style="display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid rgba(53,217,255,.14);background:rgba(15,20,29,.8)">
+        <span style="width:9px;height:9px;border-radius:50%;background:rgba(53,217,255,.5)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:rgba(53,217,255,.28)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:rgba(53,217,255,.16)"></span>
+        <span style="margin-left:12px;flex:1;height:20px;border-radius:6px;background:rgba(53,217,255,.07)"></span>
+      </div>
+      <div style="padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="grid-column:span 2;height:120px;border-radius:10px;background:repeating-linear-gradient(135deg, rgba(53,217,255,.09) 0 10px, rgba(9,12,17,0) 10px 20px);border:1px solid rgba(53,217,255,.12);display:flex;align-items:center;justify-content:center"><span style="font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;color:#78838F">interface do produto</span></div>
+        <div style="height:74px;border-radius:10px;border:1px solid rgba(53,217,255,.12);background:rgba(15,20,29,.6)"></div>
+        <div style="height:74px;border-radius:10px;border:1px solid rgba(53,217,255,.12);background:rgba(15,20,29,.6)"></div>
+        <div style="grid-column:span 2;display:flex;gap:10px">
+          <span style="flex:1;height:12px;border-radius:6px;background:rgba(53,217,255,.14)"></span>
+          <span style="width:64px;height:12px;border-radius:6px;background:rgba(53,217,255,.28)"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;padding:clamp(80px,10vw,140px) 24px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="max-width:720px;margin-bottom:clamp(44px,6vw,68px)">
+      <span style="display:block;font:500 12px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#35D9FF;margin-bottom:20px">Serviços</span>
+      <h2 style="margin:0 0 20px;font:600 clamp(1.9rem,3.6vw,2.8rem)/1.14 Sora,Inter,sans-serif;letter-spacing:-.03em;color:#FFFFFF;text-wrap:balance">O que a Solint desenvolve.</h2>
+      <p style="margin:0;font:300 clamp(1rem,1.2vw,1.1rem)/1.65 Inter,sans-serif;color:#A3AEBD;text-wrap:pretty">Do site institucional ao produto digital completo, com integrações e evolução contínua.</p>
+    </div>
+    <div style="position:relative;padding-left:clamp(26px,3vw,44px)">
+      <span aria-hidden="true" style="position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg, rgba(53,217,255,0) 0%, rgba(53,217,255,.42) 7%, rgba(22,140,255,.42) 93%, rgba(53,217,255,0) 100%);pointer-events:none"></span>
+
+      <div style="margin-bottom:clamp(46px,5.5vw,70px)">
+      <div data-reveal style="position:relative;display:flex;align-items:center;gap:14px;margin:0 0 clamp(20px,2.4vw,28px)">
+        <span aria-hidden="true" style="position:absolute;left:calc(-1 * clamp(26px,3vw,44px));top:50%;width:clamp(26px,3vw,44px);height:1px;background:linear-gradient(90deg, rgba(53,217,255,.5), rgba(53,217,255,.14))"></span>
+        <span aria-hidden="true" style="position:absolute;left:calc(-1 * clamp(26px,3vw,44px) - 4.5px);top:calc(50% - 4.5px);width:9px;height:9px;border-radius:50%;background:#35D9FF;animation:sl-node 3.4s ease-in-out 0.5s infinite"></span>
+        <span style="font:500 11.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#6B7480">01</span>
+        <h3 style="margin:0;font:600 clamp(1.05rem,1.6vw,1.24rem)/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#E4E9EF">Experiências digitais</h3>
+        <span style="font:300 .88rem/1.4 Inter,sans-serif;color:#78838F">presença e conversão</span>
+      </div>
+      <div class="bg-grid" style="display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(158px,auto);gap:16px">
+      <article class="bg-card" data-reveal style="grid-column:span 5;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.13);background:linear-gradient(180deg, rgba(13,18,26,.72), rgba(9,12,17,.6));min-height:158px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.05rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Landing pages</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Páginas de alta conversão, rápidas e focadas em uma única ação.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: campanha de lançamento com formulário integrado ao CRM.</p>
+      </article>
+      <article class="bg-card" data-reveal style="grid-column:span 4;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.13);background:linear-gradient(180deg, rgba(13,18,26,.72), rgba(9,12,17,.6));min-height:158px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.05rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Sites institucionais</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Presença digital consistente com a identidade da marca.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: site com blog, páginas por serviço e área de vagas.</p>
+      </article>
+      <article class="bg-card" data-reveal style="grid-column:span 3;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.13);background:linear-gradient(180deg, rgba(13,18,26,.72), rgba(9,12,17,.6));min-height:158px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.05rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">E-commerces</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Lojas com catálogo, pagamento e integração com a operação.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: loja com estoque sincronizado ao ERP.</p>
+      </article>
+      </div>
+      </div>
+
+      <div style="margin-bottom:clamp(46px,5.5vw,70px)">
+      <div data-reveal style="position:relative;display:flex;align-items:center;gap:14px;margin:0 0 clamp(20px,2.4vw,28px)">
+        <span aria-hidden="true" style="position:absolute;left:calc(-1 * clamp(26px,3vw,44px));top:50%;width:clamp(26px,3vw,44px);height:1px;background:linear-gradient(90deg, rgba(53,217,255,.5), rgba(53,217,255,.14))"></span>
+        <span aria-hidden="true" style="position:absolute;left:calc(-1 * clamp(26px,3vw,44px) - 4.5px);top:calc(50% - 4.5px);width:9px;height:9px;border-radius:50%;background:#35D9FF;animation:sl-node 3.4s ease-in-out 1s infinite"></span>
+        <span style="font:500 11.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#6B7480">02</span>
+        <h3 style="margin:0;font:600 clamp(1.05rem,1.6vw,1.24rem)/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#E4E9EF">Sistemas e produtos</h3>
+        <span style="font:300 .88rem/1.4 Inter,sans-serif;color:#78838F">operação e escala</span>
+      </div>
+      <div class="bg-grid" style="display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(158px,auto);gap:16px">
+      <article class="bg-card" data-reveal style="grid-column:span 6;grid-row:span 2;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:clamp(28px,3vw,38px);border:1px solid rgba(53,217,255,.32);border-radius:18px;background:linear-gradient(150deg, rgba(18,26,40,.9), rgba(10,14,20,.8));box-shadow:0 0 46px rgba(22,140,255,.14)">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.9), rgba(22,140,255,0))"></span>
+        <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(520px 240px at 12% 0%, rgba(53,217,255,.14), transparent 70%);pointer-events:none"></div>
+        <span style="position:relative;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#35D9FF">Destaque</span>
+        <h3 style="position:relative;margin:0;font:600 clamp(1.35rem,2.2vw,1.75rem)/1.22 Sora,Inter,sans-serif;letter-spacing:-.028em;color:#FFFFFF">Produtos personalizados</h3>
+        <p style="position:relative;margin:0;max-width:420px;font:300 clamp(.96rem,1.15vw,1.04rem)/1.68 Inter,sans-serif;color:#A3AEBD;text-wrap:pretty">Soluções desenhadas para um processo que só existe na sua empresa, do modelo de dados à interface de uso diário.</p>
+        <div style="position:relative;display:flex;flex-direction:column;gap:9px;margin:4px 0 6px;padding-left:14px;border-left:1px solid rgba(53,217,255,.22)">
+          <span style="font:400 .86rem/1.5 Inter,sans-serif;color:#8B97A6">Ex.: gestão de contratos com aprovação em etapas</span>
+          <span style="font:400 .86rem/1.5 Inter,sans-serif;color:#8B97A6">Ex.: operação logística com rastreio interno</span>
+          <span style="font:400 .86rem/1.5 Inter,sans-serif;color:#8B97A6">Ex.: portal de parceiros com regras de comissão</span>
+        </div>
+        <div style="position:relative;display:flex;flex-wrap:wrap;gap:10px 22px">
+          <span style="display:inline-flex;align-items:center;gap:7px;font:500 .84rem/1.3 Inter,sans-serif;color:#CFE4FB"><span aria-hidden="true" style="width:4px;height:4px;border-radius:50%;background:#35D9FF;flex:none"></span>Escopo sob medida</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;font:500 .84rem/1.3 Inter,sans-serif;color:#CFE4FB"><span aria-hidden="true" style="width:4px;height:4px;border-radius:50%;background:#35D9FF;flex:none"></span>Integrado à operação</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;font:500 .84rem/1.3 Inter,sans-serif;color:#CFE4FB"><span aria-hidden="true" style="width:4px;height:4px;border-radius:50%;background:#35D9FF;flex:none"></span>Evolução contínua</span>
+        </div>
+      </article>
+      <article class="bg-card" data-reveal style="grid-column:span 6;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.2);background:linear-gradient(180deg, rgba(14,19,28,.8), rgba(9,12,17,.62));min-height:176px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.14rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Sistemas web</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Aplicações sob medida para processos que planilha não resolve.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: controle de ordens de serviço com histórico e permissões.</p>
+      </article>
+      <article class="bg-card" data-reveal style="grid-column:span 3;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.13);background:linear-gradient(180deg, rgba(13,18,26,.72), rgba(9,12,17,.6));min-height:158px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.05rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Plataformas SaaS</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Produtos multiusuário com planos, permissões e escala.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: assinatura recorrente com painel por cliente.</p>
+      </article>
+      <article class="bg-card" data-reveal style="grid-column:span 3;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.13);background:linear-gradient(180deg, rgba(13,18,26,.72), rgba(9,12,17,.6));min-height:158px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.05rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Portais administrativos</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Back-offices para gestão de dados, times e permissões.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: painel interno com auditoria de alterações.</p>
+      </article>
+      </div>
+      </div>
+
+      <div>
+      <div data-reveal style="position:relative;display:flex;align-items:center;gap:14px;margin:0 0 clamp(20px,2.4vw,28px)">
+        <span aria-hidden="true" style="position:absolute;left:calc(-1 * clamp(26px,3vw,44px));top:50%;width:clamp(26px,3vw,44px);height:1px;background:linear-gradient(90deg, rgba(53,217,255,.5), rgba(53,217,255,.14))"></span>
+        <span aria-hidden="true" style="position:absolute;left:calc(-1 * clamp(26px,3vw,44px) - 4.5px);top:calc(50% - 4.5px);width:9px;height:9px;border-radius:50%;background:#35D9FF;animation:sl-node 3.4s ease-in-out 1.5s infinite"></span>
+        <span style="font:500 11.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#6B7480">03</span>
+        <h3 style="margin:0;font:600 clamp(1.05rem,1.6vw,1.24rem)/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#E4E9EF">Dados e operação</h3>
+        <span style="font:300 .88rem/1.4 Inter,sans-serif;color:#78838F">decisão e validação</span>
+      </div>
+      <div class="bg-grid" style="display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(158px,auto);gap:16px">
+      <article class="bg-card" data-reveal style="grid-column:span 5;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.2);background:linear-gradient(180deg, rgba(14,19,28,.8), rgba(9,12,17,.62));min-height:176px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.14rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Integrações com APIs</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Conexão com CRMs, ERPs, gateways e serviços externos.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: sincronização de pedidos entre loja e ERP.</p>
+      </article>
+      <article class="bg-card" data-reveal style="grid-column:span 4;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.13);background:linear-gradient(180deg, rgba(13,18,26,.72), rgba(9,12,17,.6));min-height:158px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.05rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Dashboards</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Indicadores em tempo real, prontos para decisão.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: painel de vendas por região atualizado a cada minuto.</p>
+      </article>
+      <article class="bg-card" data-reveal style="grid-column:span 3;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:11px;padding:26px 24px 28px;border-radius:16px;border:1px solid rgba(53,217,255,.13);background:linear-gradient(180deg, rgba(13,18,26,.72), rgba(9,12,17,.6));min-height:158px">
+        <span class="bg-line" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg, rgba(53,217,255,.85), rgba(22,140,255,0))"></span>
+        <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:1px solid rgba(53,217,255,.24);background:rgba(12,16,23,.72);display:flex;align-items:center;justify-content:center;flex:none"><span style="width:6px;height:6px;border-radius:2px;background:#35D9FF;box-shadow:0 0 8px 2px rgba(53,217,255,.5)"></span></span>
+        <h3 style="margin:0;font:600 1.05rem/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">MVPs</h3>
+        <p style="margin:0;font:300 .91rem/1.62 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Primeira versão enxuta para validar a ideia com usuários reais.</p>
+        <p class="bg-more" style="margin:0;font:400 .84rem/1.6 Inter,sans-serif;color:#8B97A6;text-wrap:pretty">Ex.: piloto em 6 semanas com 50 usuários.</p>
+      </article>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;padding:clamp(80px,10vw,140px) 24px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="max-width:700px;margin-bottom:clamp(48px,6vw,72px)">
+      <span style="display:block;font:500 12px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#35D9FF;margin-bottom:20px">Como a Solint desenvolve</span>
+      <h2 style="margin:0;font:600 clamp(1.9rem,3.6vw,2.8rem)/1.14 Sora,Inter,sans-serif;letter-spacing:-.03em;color:#FFFFFF;text-wrap:balance">Do problema ao produto no ar, em etapas claras.</h2>
+    </div>
+    <div style="position:relative;max-width:1080px;margin:0 auto;display:flex;flex-direction:column">
+      <div data-step style="display:flex;margin-left:0px">
+        <div aria-hidden="true" style="position:relative;width:1px;flex:none;background:linear-gradient(180deg, rgba(53,217,255,.42), rgba(22,140,255,.42))">
+          <span data-node style="position:absolute;left:-4.5px;top:24px;width:9px;height:9px;border-radius:50%;background:#35D9FF;box-shadow:0 0 12px 3px rgba(53,217,255,.5);transition:box-shadow .4s ease, background .4s ease"></span>
+        </div>
+        <div style="width:clamp(20px,3vw,38px);flex:none"></div>
+        <div data-card data-reveal style="flex:1;max-width:640px;padding:24px 26px 26px;border:1px solid rgba(53,217,255,.14);border-radius:16px;background:linear-gradient(180deg, rgba(15,20,29,.76), rgba(9,12,17,.6));transition:border-color .4s ease, box-shadow .4s ease">
+          <span style="display:block;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;color:#5E6773;margin-bottom:12px">01</span>
+          <h3 style="margin:0 0 10px;font:600 clamp(1.05rem,1.6vw,1.2rem)/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Descoberta e estratégia</h3>
+          <p style="margin:0;font:300 .93rem/1.66 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Objetivo do produto, público e critérios de sucesso.</p>
+        </div>
+      </div>
+      <div data-draw aria-hidden="true" style="margin-left:0px;position:relative;width:calc(2 * clamp(7px,2vw,28px));height:calc(18px + calc(2 * clamp(7px,2vw,28px)))">
+        <span style="position:absolute;left:0;top:0;width:1px;height:19px;background:rgba(53,217,255,.42)"></span>
+        <span style="position:absolute;border-left:1px solid rgba(53,217,255,.42);border-bottom:1px solid rgba(53,217,255,.42);border-bottom-left-radius:clamp(7px,2vw,28px);left:0;top:18px;width:clamp(7px,2vw,28px);height:clamp(7px,2vw,28px)"></span>
+        <span style="position:absolute;border-top:1px solid rgba(53,217,255,.42);border-right:1px solid rgba(53,217,255,.42);border-top-right-radius:clamp(7px,2vw,28px);left:clamp(7px,2vw,28px);top:calc(18px + clamp(7px,2vw,28px));width:clamp(7px,2vw,28px);height:clamp(7px,2vw,28px)"></span>
+      </div>
+      <div data-step style="display:flex;margin-left:calc(1 * 2 * clamp(7px,2vw,28px))">
+        <div aria-hidden="true" style="position:relative;width:1px;flex:none;background:linear-gradient(180deg, rgba(53,217,255,.42), rgba(22,140,255,.42))">
+          <span data-node style="position:absolute;left:-4.5px;top:24px;width:9px;height:9px;border-radius:50%;background:#35D9FF;box-shadow:0 0 12px 3px rgba(53,217,255,.5);transition:box-shadow .4s ease, background .4s ease"></span>
+        </div>
+        <div style="width:clamp(20px,3vw,38px);flex:none"></div>
+        <div data-card data-reveal style="flex:1;max-width:640px;padding:24px 26px 26px;border:1px solid rgba(53,217,255,.14);border-radius:16px;background:linear-gradient(180deg, rgba(15,20,29,.76), rgba(9,12,17,.6));transition:border-color .4s ease, box-shadow .4s ease">
+          <span style="display:block;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;color:#5E6773;margin-bottom:12px">02</span>
+          <h3 style="margin:0 0 10px;font:600 clamp(1.05rem,1.6vw,1.2rem)/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Arquitetura da solução</h3>
+          <p style="margin:0;font:300 .93rem/1.66 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Estrutura técnica, dados e integrações necessárias.</p>
+        </div>
+      </div>
+      <div data-draw aria-hidden="true" style="margin-left:calc(1 * 2 * clamp(7px,2vw,28px));position:relative;width:calc(2 * clamp(7px,2vw,28px));height:calc(18px + calc(2 * clamp(7px,2vw,28px)))">
+        <span style="position:absolute;left:0;top:0;width:1px;height:19px;background:rgba(53,217,255,.42)"></span>
+        <span style="position:absolute;border-left:1px solid rgba(53,217,255,.42);border-bottom:1px solid rgba(53,217,255,.42);border-bottom-left-radius:clamp(7px,2vw,28px);left:0;top:18px;width:clamp(7px,2vw,28px);height:clamp(7px,2vw,28px)"></span>
+        <span style="position:absolute;border-top:1px solid rgba(53,217,255,.42);border-right:1px solid rgba(53,217,255,.42);border-top-right-radius:clamp(7px,2vw,28px);left:clamp(7px,2vw,28px);top:calc(18px + clamp(7px,2vw,28px));width:clamp(7px,2vw,28px);height:clamp(7px,2vw,28px)"></span>
+      </div>
+      <div data-step style="display:flex;margin-left:calc(2 * 2 * clamp(7px,2vw,28px))">
+        <div aria-hidden="true" style="position:relative;width:1px;flex:none;background:linear-gradient(180deg, rgba(53,217,255,.42), rgba(22,140,255,.42))">
+          <span data-node style="position:absolute;left:-4.5px;top:24px;width:9px;height:9px;border-radius:50%;background:#35D9FF;box-shadow:0 0 12px 3px rgba(53,217,255,.5);transition:box-shadow .4s ease, background .4s ease"></span>
+        </div>
+        <div style="width:clamp(20px,3vw,38px);flex:none"></div>
+        <div data-card data-reveal style="flex:1;max-width:640px;padding:24px 26px 26px;border:1px solid rgba(53,217,255,.14);border-radius:16px;background:linear-gradient(180deg, rgba(15,20,29,.76), rgba(9,12,17,.6));transition:border-color .4s ease, box-shadow .4s ease">
+          <span style="display:block;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;color:#5E6773;margin-bottom:12px">03</span>
+          <h3 style="margin:0 0 10px;font:600 clamp(1.05rem,1.6vw,1.2rem)/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">UX/UI e prototipação</h3>
+          <p style="margin:0;font:300 .93rem/1.66 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Fluxos e telas validados antes de escrever código.</p>
+        </div>
+      </div>
+      <div data-draw aria-hidden="true" style="margin-left:calc(2 * 2 * clamp(7px,2vw,28px));position:relative;height:calc(18px + calc(2 * clamp(7px,2vw,28px)));width:1px;background:linear-gradient(180deg, rgba(53,217,255,.42), rgba(53,217,255,.42))"></div>
+      <div data-step style="display:flex;margin-left:calc(2 * 2 * clamp(7px,2vw,28px))">
+        <div aria-hidden="true" style="position:relative;width:1px;flex:none;background:linear-gradient(180deg, rgba(53,217,255,.42), rgba(22,140,255,.42))">
+          <span data-node style="position:absolute;left:-4.5px;top:24px;width:9px;height:9px;border-radius:50%;background:#35D9FF;box-shadow:0 0 12px 3px rgba(53,217,255,.5);transition:box-shadow .4s ease, background .4s ease"></span>
+        </div>
+        <div style="width:clamp(20px,3vw,38px);flex:none"></div>
+        <div data-card data-reveal style="flex:1;max-width:640px;padding:24px 26px 26px;border:1px solid rgba(53,217,255,.14);border-radius:16px;background:linear-gradient(180deg, rgba(15,20,29,.76), rgba(9,12,17,.6));transition:border-color .4s ease, box-shadow .4s ease">
+          <span style="display:block;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;color:#5E6773;margin-bottom:12px">04</span>
+          <h3 style="margin:0 0 10px;font:600 clamp(1.05rem,1.6vw,1.2rem)/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Desenvolvimento</h3>
+          <p style="margin:0;font:300 .93rem/1.66 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Entregas curtas, revisadas e acompanhadas de perto.</p>
+        </div>
+      </div>
+      <div data-draw aria-hidden="true" style="margin-left:calc(1 * 2 * clamp(7px,2vw,28px));position:relative;width:calc(2 * clamp(7px,2vw,28px));height:calc(18px + calc(2 * clamp(7px,2vw,28px)))">
+        <span style="position:absolute;right:0;top:0;width:1px;height:19px;background:rgba(53,217,255,.42)"></span>
+        <span style="position:absolute;border-right:1px solid rgba(53,217,255,.42);border-bottom:1px solid rgba(53,217,255,.42);border-bottom-right-radius:clamp(7px,2vw,28px);right:0;top:18px;width:clamp(7px,2vw,28px);height:clamp(7px,2vw,28px)"></span>
+        <span style="position:absolute;border-top:1px solid rgba(53,217,255,.42);border-left:1px solid rgba(53,217,255,.42);border-top-left-radius:clamp(7px,2vw,28px);right:clamp(7px,2vw,28px);top:calc(18px + clamp(7px,2vw,28px));width:clamp(7px,2vw,28px);height:clamp(7px,2vw,28px)"></span>
+      </div>
+      <div data-step style="display:flex;margin-left:calc(1 * 2 * clamp(7px,2vw,28px))">
+        <div aria-hidden="true" style="position:relative;width:1px;flex:none;background:linear-gradient(180deg, rgba(53,217,255,.42), rgba(22,140,255,.42))">
+          <span data-node style="position:absolute;left:-4.5px;top:24px;width:9px;height:9px;border-radius:50%;background:#35D9FF;box-shadow:0 0 12px 3px rgba(53,217,255,.5);transition:box-shadow .4s ease, background .4s ease"></span>
+        </div>
+        <div style="width:clamp(20px,3vw,38px);flex:none"></div>
+        <div data-card data-reveal style="flex:1;max-width:640px;padding:24px 26px 26px;border:1px solid rgba(53,217,255,.14);border-radius:16px;background:linear-gradient(180deg, rgba(15,20,29,.76), rgba(9,12,17,.6));transition:border-color .4s ease, box-shadow .4s ease">
+          <span style="display:block;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.14em;color:#5E6773;margin-bottom:12px">05</span>
+          <h3 style="margin:0 0 10px;font:600 clamp(1.05rem,1.6vw,1.2rem)/1.3 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#FAFCFF">Testes e otimização</h3>
+          <p style="margin:0;font:300 .93rem/1.66 Inter,sans-serif;color:#94A3B4;text-wrap:pretty">Qualidade, desempenho e acessibilidade antes de publicar.</p>
+        </div>
+      </div>
+      <div data-draw aria-hidden="true" style="margin-left:0px;position:relative;width:calc(2 * clamp(7px,2vw,28px));height:calc(18px + calc(2 * clamp(7px,2vw,28px)))">
+        <span style="position:absolute;right:0;top:0;width:1px;height:19px;background:rgba(53,217,255,.42)"></span>
+        <span style="position:absolute;border-right:1px solid rgba(53,217,255,.42);border-bottom:1px solid rgba(53,217,255,.42);border-bottom-right-radius:clamp(7px,2vw,28px);right:0;top:18px;width:clamp(7px,2vw,28px);height:clamp(7px,2vw,28px)"></span>
+        <span style="position:absolute;border-top:1px solid rgba(53,217,255,.42);border-left:1px solid rgba(53,217,255,.42);border-top-left-radius:clamp(7px,2vw,28px);right:clamp(7px,2vw,28px);top:calc(18px + clamp(7px,2vw,28px));width:clamp(7px,2vw,28px);height:clamp(7px,2vw,28px)"></span>
+      </div>
+      <div data-step style="display:flex;margin-left:0px">
+        <div aria-hidden="true" style="position:relative;width:1px;flex:none;background:linear-gradient(180deg, rgba(53,217,255,.42), rgba(53,217,255,0) 92%)">
+          <span data-node style="position:absolute;left:-5.5px;top:24px;width:11px;height:11px;border-radius:50%;background:#FFB65C;box-shadow:0 0 12px 3px rgba(255,182,92,.55);animation:sl-node-amber 3s ease-in-out infinite"></span>
+        </div>
+        <div style="width:clamp(20px,3vw,38px);flex:none"></div>
+        <div data-card data-reveal style="flex:1;position:relative;overflow:hidden;padding:clamp(28px,3.4vw,42px);border:1px solid rgba(53,217,255,.3);border-radius:20px;background:linear-gradient(140deg, rgba(16,24,38,.88), rgba(9,12,17,.72))">
+          <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(640px 280px at 14% 0%, rgba(53,217,255,.16), transparent 72%);pointer-events:none;animation:sl-glowpan 10s ease-in-out infinite"></div>
+          <div style="position:relative">
+            <span style="display:block;font:500 11.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#35D9FF;margin-bottom:14px">Etapa 06 · encerramento do fluxo</span>
+            <h3 style="margin:0 0 14px;max-width:620px;font:600 clamp(1.4rem,2.6vw,2rem)/1.2 Sora,Inter,sans-serif;letter-spacing:-.028em;color:#FFFFFF;text-wrap:balance">Publicação e evolução</h3>
+            <p style="margin:0 0 28px;max-width:560px;font:300 clamp(.98rem,1.2vw,1.08rem)/1.68 Inter,sans-serif;color:#A3AEBD;text-wrap:pretty">No ar, monitorado e melhorado com base em uso real. O produto entra em ciclo, não em prateleira.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(216px,1fr));gap:12px">
+            <div style="display:flex;align-items:center;gap:11px;padding:14px 16px;border:1px solid rgba(53,217,255,.2);border-radius:12px;background:rgba(12,16,23,.7)">
+              <span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#35D9FF;flex:none;animation:sl-node 3.6s ease-in-out 0.00s infinite"></span>
+              <span style="font:500 .88rem/1.35 Inter,sans-serif;color:#E4E9EF">Produto publicado</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:11px;padding:14px 16px;border:1px solid rgba(53,217,255,.2);border-radius:12px;background:rgba(12,16,23,.7)">
+              <span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#35D9FF;flex:none;animation:sl-node 3.6s ease-in-out 0.45s infinite"></span>
+              <span style="font:500 .88rem/1.35 Inter,sans-serif;color:#E4E9EF">Monitoramento ativo</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:11px;padding:14px 16px;border:1px solid rgba(53,217,255,.2);border-radius:12px;background:rgba(12,16,23,.7)">
+              <span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#35D9FF;flex:none;animation:sl-node 3.6s ease-in-out 0.90s infinite"></span>
+              <span style="font:500 .88rem/1.35 Inter,sans-serif;color:#E4E9EF">Melhorias contínuas</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:11px;padding:14px 16px;border:1px solid rgba(53,217,255,.2);border-radius:12px;background:rgba(12,16,23,.7)">
+              <span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#35D9FF;flex:none;animation:sl-node 3.6s ease-in-out 1.35s infinite"></span>
+              <span style="font:500 .88rem/1.35 Inter,sans-serif;color:#E4E9EF">Novas versões</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:11px;padding:14px 16px;border:1px solid rgba(53,217,255,.2);border-radius:12px;background:rgba(12,16,23,.7)">
+              <span aria-hidden="true" style="width:8px;height:8px;border-radius:50%;background:#35D9FF;flex:none;animation:sl-node 3.6s ease-in-out 1.80s infinite"></span>
+              <span style="font:500 .88rem/1.35 Inter,sans-serif;color:#E4E9EF">Dados reais orientando a evolução</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" style="position:relative;padding:clamp(80px,10vw,140px) 24px;background:#F4F7FB">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="max-width:720px;margin-bottom:clamp(40px,5vw,60px)">
+      <span style="display:block;font:500 12px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#174EFF;margin-bottom:20px">Portfólio</span>
+      <h2 style="margin:0 0 16px;font:600 clamp(1.9rem,3.6vw,2.8rem)/1.14 Sora,Inter,sans-serif;letter-spacing:-.03em;color:#0A1424;text-wrap:balance">Trabalhos e produtos desenvolvidos.</h2>
+      <p style="margin:0;font:400 12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.03em;color:#5B6472">Espaço reservado. Substituir mockup, nome, categoria, descrição e tecnologias pelos projetos reais.</p>
+    </div>
+    <div class="port-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+
+      <article class="port-card" data-reveal style="display:flex;flex-direction:column;border:1px dashed rgba(10,20,35,.16);border-radius:18px;background:#FFFFFF;box-shadow:0 8px 24px rgba(10,20,35,.06);overflow:hidden;transition:border-color .3s ease, transform .3s cubic-bezier(.22,.61,.36,1)" style-hover="border-color:rgba(23,78,255,.4);transform:translateY(-5px)">
+        <div style="height:180px;background:repeating-linear-gradient(135deg, rgba(23,78,255,.06) 0 10px, rgba(255,255,255,0) 10px 20px);border-bottom:1px dashed rgba(10,20,35,.12);display:flex;align-items:center;justify-content:center"><span style="font:500 11.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:#7A8593">mockup do projeto</span></div>
+        <div style="padding:26px;display:flex;flex-direction:column;gap:12px;flex:1">
+          <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#7A8593">Categoria</span>
+          <h3 style="margin:0;font:600 1.12rem/1.3 Sora,Inter,sans-serif;color:#0A1424">Projeto 01</h3>
+          <p style="margin:0;font:300 .92rem/1.65 Inter,sans-serif;color:#4A5568">Breve descrição do projeto e do problema que ele resolve.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px"><span style="padding:5px 10px;border:1px solid rgba(10,20,35,.14);border-radius:999px;font:400 .75rem/1.2 Inter,sans-serif;color:#516075">tecnologia</span><span style="padding:5px 10px;border:1px solid rgba(10,20,35,.14);border-radius:999px;font:400 .75rem/1.2 Inter,sans-serif;color:#516075">tecnologia</span></div>
+          <a href="#" style="margin-top:auto;align-self:flex-start;padding:11px 20px;border-radius:10px;border:1px solid rgba(23,78,255,.32);font:500 .88rem/1 Inter,sans-serif;color:#174EFF;transition:background .25s ease,border-color .25s ease" style-hover="background:rgba(23,78,255,.08);border-color:rgba(23,78,255,.55);color:#0F3FCC">Visualizar projeto</a>
+        </div>
+      </article>
+
+      <article class="port-card" data-reveal style="display:flex;flex-direction:column;border:1px dashed rgba(10,20,35,.16);border-radius:18px;background:#FFFFFF;box-shadow:0 8px 24px rgba(10,20,35,.06);overflow:hidden;transition:border-color .3s ease, transform .3s cubic-bezier(.22,.61,.36,1)" style-hover="border-color:rgba(23,78,255,.4);transform:translateY(-5px)">
+        <div style="height:180px;background:repeating-linear-gradient(135deg, rgba(23,78,255,.06) 0 10px, rgba(255,255,255,0) 10px 20px);border-bottom:1px dashed rgba(10,20,35,.12);display:flex;align-items:center;justify-content:center"><span style="font:500 11.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:#7A8593">mockup do projeto</span></div>
+        <div style="padding:26px;display:flex;flex-direction:column;gap:12px;flex:1">
+          <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#7A8593">Categoria</span>
+          <h3 style="margin:0;font:600 1.12rem/1.3 Sora,Inter,sans-serif;color:#0A1424">Projeto 02</h3>
+          <p style="margin:0;font:300 .92rem/1.65 Inter,sans-serif;color:#4A5568">Breve descrição do projeto e do problema que ele resolve.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px"><span style="padding:5px 10px;border:1px solid rgba(10,20,35,.14);border-radius:999px;font:400 .75rem/1.2 Inter,sans-serif;color:#516075">tecnologia</span><span style="padding:5px 10px;border:1px solid rgba(10,20,35,.14);border-radius:999px;font:400 .75rem/1.2 Inter,sans-serif;color:#516075">tecnologia</span></div>
+          <a href="#" style="margin-top:auto;align-self:flex-start;padding:11px 20px;border-radius:10px;border:1px solid rgba(23,78,255,.32);font:500 .88rem/1 Inter,sans-serif;color:#174EFF;transition:background .25s ease,border-color .25s ease" style-hover="background:rgba(23,78,255,.08);border-color:rgba(23,78,255,.55);color:#0F3FCC">Visualizar projeto</a>
+        </div>
+      </article>
+
+      <article class="port-card" data-reveal style="display:flex;flex-direction:column;border:1px dashed rgba(10,20,35,.16);border-radius:18px;background:#FFFFFF;box-shadow:0 8px 24px rgba(10,20,35,.06);overflow:hidden;transition:border-color .3s ease, transform .3s cubic-bezier(.22,.61,.36,1)" style-hover="border-color:rgba(23,78,255,.4);transform:translateY(-5px)">
+        <div style="height:180px;background:repeating-linear-gradient(135deg, rgba(23,78,255,.06) 0 10px, rgba(255,255,255,0) 10px 20px);border-bottom:1px dashed rgba(10,20,35,.12);display:flex;align-items:center;justify-content:center"><span style="font:500 11.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;color:#7A8593">mockup do projeto</span></div>
+        <div style="padding:26px;display:flex;flex-direction:column;gap:12px;flex:1">
+          <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#7A8593">Categoria</span>
+          <h3 style="margin:0;font:600 1.12rem/1.3 Sora,Inter,sans-serif;color:#0A1424">Projeto 03</h3>
+          <p style="margin:0;font:300 .92rem/1.65 Inter,sans-serif;color:#4A5568">Breve descrição do projeto e do problema que ele resolve.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:7px"><span style="padding:5px 10px;border:1px solid rgba(10,20,35,.14);border-radius:999px;font:400 .75rem/1.2 Inter,sans-serif;color:#516075">tecnologia</span><span style="padding:5px 10px;border:1px solid rgba(10,20,35,.14);border-radius:999px;font:400 .75rem/1.2 Inter,sans-serif;color:#516075">tecnologia</span></div>
+          <a href="#" style="margin-top:auto;align-self:flex-start;padding:11px 20px;border-radius:10px;border:1px solid rgba(23,78,255,.32);font:500 .88rem/1 Inter,sans-serif;color:#174EFF;transition:background .25s ease,border-color .25s ease" style-hover="background:rgba(23,78,255,.08);border-color:rgba(23,78,255,.55);color:#0F3FCC">Visualizar projeto</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;padding:clamp(88px,11vw,150px) 24px;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;left:50%;top:50%;width:min(1000px,140%);height:min(1000px,140%);transform:translate(-50%,-50%);background:radial-gradient(circle at 50% 50%, rgba(22,140,255,.20) 0%, rgba(23,78,255,.10) 34%, rgba(5,10,20,0) 66%);pointer-events:none;animation:sl-glowpan 11s ease-in-out infinite"></div>
+  <div data-reveal style="position:relative;max-width:760px;margin:0 auto;text-align:center">
+    <h2 style="margin:0 0 20px;font:600 clamp(1.9rem,4vw,3rem)/1.14 Sora,Inter,sans-serif;letter-spacing:-.035em;color:#FFFFFF;text-wrap:balance">Tem um produto para tirar do papel?</h2>
+    <p style="margin:0 auto 38px;max-width:520px;font:300 clamp(1rem,1.3vw,1.14rem)/1.65 Inter,sans-serif;color:#A3AEBD;text-wrap:pretty">Conte a ideia e o prazo. Devolvemos escopo, arquitetura e caminho de entrega.</p>
+    <a href="Solint%20Landing.dc.html#contato" style="display:inline-flex;align-items:center;justify-content:center;padding:18px 36px;border-radius:13px;background:linear-gradient(100deg,#174EFF 0%,#168CFF 52%,#35D9FF 100%);color:#071018;font:600 15.5px/1 Inter,sans-serif;box-shadow:0 12px 40px rgba(22,140,255,.34);transition:transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s ease" style-hover="transform:translateY(-3px);box-shadow:0 20px 54px rgba(53,217,255,.46);color:#071018">Falar com a Solint</a>
+  </div>
+</section>
+
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    this.typeRef = React.createRef();
+  }
+  componentDidMount(){
+    this.setupTyping();
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const meshes = Array.from(document.querySelectorAll('[data-mesh]'));
+    if (meshes.length) {
+      let mraf = 0;
+      const mv = () => {
+        const y = window.scrollY || 0;
+        meshes.forEach((m) => {
+          const sp = parseFloat(m.getAttribute('data-mesh-speed') || '.12');
+          m.style.transform = 'translate(-50%, calc(-50% + ' + (y * sp).toFixed(1) + 'px))';
+        });
+      };
+      this.onMesh = () => { if (mraf) return; mraf = requestAnimationFrame(() => { mraf = 0; mv(); }); };
+      window.addEventListener('scroll', this.onMesh, { passive: true });
+      mv();
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.22,.61,.36,1) ' + ((i % 4) * 70) + 'ms, transform .7s cubic-bezier(.22,.61,.36,1) ' + ((i % 4) * 70) + 'ms';
+      io.observe(el);
+    });
+    document.querySelectorAll('[data-draw]').forEach((el) => {
+      el.style.transformOrigin = 'top';
+      el.style.transform = 'scaleY(0)';
+      el.style.opacity = '0';
+      el.style.transition = 'transform .75s cubic-bezier(.22,.61,.36,1), opacity .4s ease';
+      io.observe(el);
+    });
+    this.io = io;
+
+    const steps = Array.from(document.querySelectorAll('[data-step]'));
+    if (steps.length) {
+      const paint = () => {
+        const mid = window.innerHeight * 0.42;
+        let best = null, bestD = Infinity;
+        steps.forEach((st) => {
+          const r = st.getBoundingClientRect();
+          const d = Math.abs(r.top + Math.min(r.height, window.innerHeight) / 2 - mid);
+          if (d < bestD) { bestD = d; best = st; }
+        });
+        steps.forEach((st) => {
+          const on = st === best;
+          const card = st.querySelector('[data-card]');
+          const node = st.querySelector('[data-node]');
+          if (card) {
+            card.style.borderColor = on ? 'rgba(255,182,92,.5)' : '';
+            card.style.boxShadow = on ? '0 18px 48px rgba(2,8,18,.5), 0 0 40px rgba(255,182,92,.18)' : '';
+          }
+          if (node) {
+            node.style.background = on ? '#FFB65C' : '';
+            node.style.boxShadow = on ? '0 0 20px 6px rgba(255,182,92,.55)' : '';
+          }
+        });
+      };
+      let raf = 0;
+      this.onScroll = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; paint(); }); };
+      window.addEventListener('scroll', this.onScroll, { passive: true });
+      window.addEventListener('resize', this.onScroll, { passive: true });
+      paint();
+    }
+  }
+  componentWillUnmount(){
+    if (this.io) this.io.disconnect();
+    if (this.onMesh) window.removeEventListener('scroll', this.onMesh);
+    if (this.onScroll) { window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onScroll);  if (this.typeTimer) clearTimeout(this.typeTimer); }
+  setupTyping(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const tspan = this.typeRef.current;
+    if (!tspan || reduce) return;
+    const h1 = tspan.closest('h1');
+    if (h1) h1.style.minHeight = h1.offsetHeight + 'px';
+    const full = tspan.textContent;
+    tspan.textContent = '';
+    const caret = document.createElement('span');
+    caret.textContent = '\u258d';
+    caret.setAttribute('aria-hidden', 'true');
+    caret.style.cssText = 'color:#35D9FF;-webkit-text-fill-color:#35D9FF;animation:sl-caret 1s steps(1) infinite;margin-left:2px';
+    if (h1) h1.appendChild(caret);
+    let i = 0;
+    const tick = () => {
+      i++;
+      tspan.textContent = full.slice(0, i);
+      if (i < full.length) this.typeTimer = setTimeout(tick, 36);
+      else this.typeTimer = setTimeout(() => caret.remove(), 1400);
+    };
+    this.typeTimer = setTimeout(tick, 450);
+  }
+
+  }
+  renderVals(){ return { typeRef: this.typeRef }; }
+}
+</script>
+</body>
+</html>

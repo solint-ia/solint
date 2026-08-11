@@ -1,0 +1,124 @@
+import { ArrowUpRight, Layers, Sparkles } from "lucide-react";
+import { Button, Card, Reveal } from "@/components/ui";
+import type { ProjectCard } from "@/types";
+
+interface ProjectGridProps {
+  projects: readonly ProjectCard[];
+  /** Legenda do placeholder (mantido para compatibilidade). */
+  imageLabel?: string;
+  /** Altura do header visual do projeto. */
+  imageHeight?: number;
+}
+
+/**
+ * Grade de projetos e cases de portfólio no padrão All-Dark Glassmorphic.
+ */
+export function ProjectGrid({ projects, imageHeight = 170 }: ProjectGridProps) {
+  return (
+    <div className="group/grid grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project, index) => (
+        <Reveal key={project.title} delay={(index % 3) * 0.08} className="flex">
+          <Card
+            as="article"
+            interactive
+            className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-accent/18 bg-panel/75 shadow-[0_8px_24px_rgb(2_8_18/0.4)] backdrop-blur-md transition-all duration-300 group-hover/grid:opacity-50 hover:!opacity-100 hover:-translate-y-1.5 hover:border-accent/45 hover:shadow-[0_16px_40px_rgb(22_140_255/0.16)]"
+          >
+            {/* Header visual com preview de software */}
+            <div
+              className="relative flex flex-col justify-between overflow-hidden bg-[linear-gradient(145deg,#070D18,#0F1F38)] p-4 text-white"
+              style={{ height: imageHeight }}
+            >
+              {/* Glow sutil */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-6 -top-6 size-32 rounded-full bg-accent/20 blur-2xl"
+              />
+
+              <div className="relative flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <span className="size-2 rounded-full bg-rose-500/70" />
+                  <span className="size-2 rounded-full bg-amber-400/70" />
+                  <span className="size-2 rounded-full bg-emerald-400/70" />
+                </div>
+
+                {project.badge ? (
+                  <span className="inline-flex items-center gap-1 rounded-full border border-accent/25 bg-ink/75 px-2.5 py-0.5 font-mono text-[0.66rem] font-semibold text-accent shadow-sm">
+                    <Sparkles className="size-2.5" />
+                    {project.badge}
+                  </span>
+                ) : null}
+              </div>
+
+              {/* Mini mockup interior */}
+              <div className="relative rounded-xl border border-white/10 bg-white/6 p-3 backdrop-blur-md">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <div className="flex size-6 items-center justify-center rounded-lg bg-accent/20 text-accent">
+                      <Layers className="size-3.5" />
+                    </div>
+                    <span className="font-display text-[0.82rem] font-semibold text-white">
+                      {project.title}
+                    </span>
+                  </div>
+                  <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                </div>
+              </div>
+            </div>
+
+            {/* Conteúdo do Card */}
+            <div className="flex flex-1 flex-col gap-3.5 p-6">
+              {project.category ? (
+                <span className="font-mono text-[0.7rem]/none font-semibold tracking-[0.14em] text-accent uppercase">
+                  {project.category}
+                </span>
+              ) : null}
+
+              <h3 className="m-0 font-display text-[1.18rem]/[1.25] font-bold text-white">
+                {project.title}
+              </h3>
+
+              {project.description ? (
+                <p className="m-0 text-pretty text-[0.88rem]/[1.6] font-light text-muted">
+                  {project.description}
+                </p>
+              ) : null}
+
+              {/* Métrica de Impacto / Destaque Semântico */}
+              {project.metric ? (
+                <div className="inline-flex items-center gap-1.5 self-start rounded-lg border border-accent/25 bg-accent/12 px-3 py-1 font-mono text-[0.76rem] font-bold text-accent shadow-[0_0_10px_rgb(53_217_255/0.15)]">
+                  {project.metric}
+                </div>
+              ) : null}
+
+              {/* Tags de Tecnologias */}
+              {project.tags ? (
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-lg border border-accent/15 bg-ink/75 px-2.5 py-1 font-mono text-[0.72rem] text-steel-2"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+
+              <div className="mt-auto pt-3.5 border-t border-accent/12 flex items-center justify-between">
+                <Button
+                  href={project.href}
+                  variant="secondary"
+                  size="sm"
+                  className="group/btn flex items-center gap-1.5"
+                >
+                  <span>{project.ctaLabel}</span>
+                  <ArrowUpRight className="size-3.5 text-accent transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </Reveal>
+      ))}
+    </div>
+  );
+}

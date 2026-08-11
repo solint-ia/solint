@@ -1,0 +1,105 @@
+import { Section } from "@/components/layout";
+import { ProspectFlow } from "@/components/features";
+import { Reveal, SectionHeading } from "@/components/ui";
+import {
+  destinationPanel,
+  flowSection,
+  HIGHLIGHTED_STEP_INDEX,
+  leadStatuses,
+  prospectSteps,
+  qualificationQuestions,
+} from "@/config/content/prospect";
+import { cn } from "@/lib/utils";
+
+/** Perguntas que a IA faz na etapa de pré-qualificação. */
+function QualificationQuestions() {
+  return (
+    <div className="mt-4.5 flex flex-wrap gap-x-5 gap-y-2.5">
+      {qualificationQuestions.map((question) => (
+        <span
+          key={question}
+          className="inline-flex items-center gap-[7px] text-[0.84rem]/[1.3] font-normal text-steel"
+        >
+          <span aria-hidden="true" className="size-1 flex-none rounded-full bg-accent" />
+          {question}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+/** Painel de destino: a progressão de status do lead até estar pronto para fechar. */
+function DestinationPanel() {
+  return (
+    <div className="relative mx-auto flex max-w-[1080px] flex-col items-center">
+      {/* Cauda que liga o último passo do fluxo ao painel */}
+      <div
+        aria-hidden="true"
+        className="relative ml-3.5 h-[clamp(56px,7vw,84px)] w-px self-start bg-[linear-gradient(180deg,rgb(22_140_255/0.5),rgb(53_217_255/0.14))] lg:ml-0 lg:self-center"
+      >
+        <span className="absolute -bottom-1 -left-1 size-[9px] rounded-full bg-accent-soft shadow-[0_0_14px_4px_rgb(53_217_255/0.6)]" />
+      </div>
+
+      <Reveal className="relative w-full overflow-hidden rounded-[22px] border border-accent/30 bg-[linear-gradient(140deg,rgb(16_24_38/0.88),rgb(9_12_17/0.72))] p-[clamp(32px,4vw,48px)] text-center">
+        <div
+          aria-hidden="true"
+          className="animate-glowpan pointer-events-none absolute inset-0 bg-[radial-gradient(620px_280px_at_50%_0%,rgb(53_217_255/0.18),transparent_72%)]"
+          style={{ animationDuration: "10s" }}
+        />
+
+        <div className="relative flex flex-col items-center gap-5.5">
+          <span className="text-[11.5px]/none font-medium tracking-[0.16em] text-accent uppercase">
+            {destinationPanel.eyebrow}
+          </span>
+          <h3 className="m-0 max-w-[620px] font-display text-[clamp(1.5rem,2.8vw,2.1rem)]/[1.2] font-semibold tracking-[-0.028em] text-balance text-white">
+            {destinationPanel.title}
+          </h3>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2.5">
+            {leadStatuses.map((status, index) => (
+              <span key={status.label} className="contents">
+                <span
+                  className={cn(
+                    "rounded-full border bg-panel-4/75 px-4 py-2.25 text-[0.84rem]/[1.2] font-medium",
+                    status.accent === "amber"
+                      ? "animate-status-amber border-amber/30 text-amber-soft"
+                      : "animate-status border-accent/22 text-[#AEB9C6]",
+                  )}
+                  style={{ animationDelay: `${index * 0.9}s` }}
+                >
+                  {status.label}
+                </span>
+                {index < leadStatuses.length - 1 ? (
+                  <span aria-hidden="true" className="text-[0.9rem]/none text-accent opacity-60">
+                    →
+                  </span>
+                ) : null}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+    </div>
+  );
+}
+
+/** Seção "Como Funciona": fluxo em S de 6 etapas e painel de destino. */
+export function FlowSection() {
+  return (
+    <Section id="como-funciona">
+      <SectionHeading
+        eyebrow={flowSection.eyebrow}
+        title={flowSection.title}
+        className="mb-[clamp(48px,6vw,76px)]"
+      />
+
+      <ProspectFlow
+        steps={prospectSteps}
+        highlightedIndex={HIGHLIGHTED_STEP_INDEX}
+        highlightContent={<QualificationQuestions />}
+      />
+
+      <DestinationPanel />
+    </Section>
+  );
+}

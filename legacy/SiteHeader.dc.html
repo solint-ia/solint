@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><style>
+.slh-links{display:flex;gap:44px;align-items:center}
+.slh-cta{display:inline-flex}
+.slh-burger{display:none}
+.slh-bar{height:104px;gap:56px}
+.slh-logo{height:38px;transform:scale(1.12);transform-origin:left center}
+@media (max-width:1040px){.slh-links{display:none}.slh-cta{display:none}.slh-burger{display:inline-flex}.slh-bar{height:82px;gap:20px}.slh-logo{height:30px;transform:scale(1.06)}}
+@media (min-width:1041px){.slh-mobile{display:none !important}}
+</style></helmet>
+<header ref="{{ headerRef }}" style="position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(5,10,20,.55);border-bottom:1px solid rgba(53,217,255,.10);transition:background .3s ease, border-color .3s ease">
+  <div class="slh-bar" style="max-width:1240px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <a href="Solint%20Landing.dc.html" aria-label="Solint, ir para a página inicial" style="display:flex;align-items:center;flex:none;overflow:visible">
+      <img class="slh-logo" src="assets/solint-logo.png" alt="Solint" style="width:auto;display:block;filter:brightness(1.25) saturate(1.1)">
+    </a>
+    <nav class="slh-links" aria-label="Navegação principal">
+      <a data-nav="home" href="Solint%20Landing.dc.html" style="font:500 14px/1 Inter,sans-serif;color:#B9CCE6;letter-spacing:.01em;padding:6px 0;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease" style-hover="color:#FFFFFF">Home</a>
+      <a data-nav="agentes" href="Agentes%20de%20IA.dc.html" style="font:500 14px/1 Inter,sans-serif;color:#B9CCE6;letter-spacing:.01em;padding:6px 0;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease" style-hover="color:#FFFFFF">Agentes de IA</a>
+      <a data-nav="prospect" href="Prospect.dc.html" style="font:500 14px/1 Inter,sans-serif;color:#B9CCE6;letter-spacing:.01em;padding:6px 0;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease" style-hover="color:#FFFFFF">Prospect</a>
+      <a data-nav="dev" href="Desenvolvimento%20de%20softwares.dc.html" style="font:500 14px/1 Inter,sans-serif;color:#B9CCE6;letter-spacing:.01em;padding:6px 0;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease" style-hover="color:#FFFFFF">Soluções</a>
+    </nav>
+    <a class="slh-cta" href="Solint%20Landing.dc.html#contato" style="align-items:center;gap:8px;padding:11px 20px;border-radius:10px;background:linear-gradient(100deg,#174EFF 0%,#168CFF 55%,#35D9FF 100%);color:#071018;font:600 13.5px/1 Inter,sans-serif;letter-spacing:.01em;box-shadow:0 6px 22px rgba(22,140,255,.28);transition:box-shadow .25s ease, transform .25s ease;flex:none" style-hover="box-shadow:0 10px 30px rgba(53,217,255,.42);transform:translateY(-1px);color:#071018">Fale com a Solint</a>
+    <button class="slh-burger" type="button" aria-label="Abrir menu" aria-expanded="{{ menuOpenStr }}" onClick="{{ toggleMenu }}" style="align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;border:1px solid rgba(53,217,255,.22);background:rgba(13,18,26,.7);cursor:pointer;flex:none;padding:0">
+      <span style="display:flex;flex-direction:column;gap:5px;width:16px">
+        <span style="height:1.5px;background:#E4E9EF;border-radius:2px"></span>
+        <span style="height:1.5px;background:#E4E9EF;border-radius:2px"></span>
+        <span style="height:1.5px;background:#E4E9EF;border-radius:2px"></span>
+      </span>
+    </button>
+  </div>
+  <div class="slh-mobile" ref="{{ menuRef }}" style="overflow:hidden;max-height:0px;opacity:0;background:rgba(4,9,18,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:max-height .35s cubic-bezier(.22,.61,.36,1), opacity .3s ease">
+    <div style="display:flex;flex-direction:column;gap:2px;padding:10px 24px 22px;border-top:1px solid rgba(53,217,255,.10)">
+      <a href="Solint%20Landing.dc.html" onClick="{{ closeMenu }}" style="font:500 15px/1.3 Inter,sans-serif;color:#C7D8EE;padding:14px 0">Home</a>
+      <a href="Agentes%20de%20IA.dc.html" onClick="{{ closeMenu }}" style="font:500 15px/1.3 Inter,sans-serif;color:#C7D8EE;padding:14px 0">Agentes de IA</a>
+      <a href="Prospect.dc.html" onClick="{{ closeMenu }}" style="font:500 15px/1.3 Inter,sans-serif;color:#C7D8EE;padding:14px 0">Prospect</a>
+      <a href="Desenvolvimento%20de%20softwares.dc.html" onClick="{{ closeMenu }}" style="font:500 15px/1.3 Inter,sans-serif;color:#C7D8EE;padding:14px 0">Soluções</a>
+      <a href="Solint%20Landing.dc.html#contato" onClick="{{ closeMenu }}" style="margin-top:12px;text-align:center;padding:14px 20px;border-radius:11px;background:linear-gradient(100deg,#174EFF,#35D9FF);color:#071018;font:600 14px/1 Inter,sans-serif">Fale com a Solint</a>
+    </div>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:90},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;agentes&quot;,&quot;prospect&quot;,&quot;dev&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home'|'agentes'|'prospect'|'dev'&quot;}}">
+class Component extends DCLogic {
+  constructor(p){ super(p); this.state = { menuOpen: false }; this.headerRef = React.createRef(); this.menuRef = React.createRef(); }
+  componentDidMount(){
+    const active = this.props.active || 'home';
+    const h = this.headerRef.current;
+    if (h){
+      const el = h.querySelector('[data-nav="' + active + '"]');
+      if (el){ el.style.color = '#FFFFFF'; el.style.borderBottomColor = '#35D9FF'; el.setAttribute('aria-current', 'page'); }
+    }
+    this.onScroll = () => {
+      if (!h) return;
+      const past = window.scrollY > 24;
+      h.style.background = past ? 'rgba(4,9,18,.88)' : 'rgba(5,10,20,.55)';
+      h.style.borderBottomColor = past ? 'rgba(53,217,255,.18)' : 'rgba(53,217,255,.10)';
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount(){ window.removeEventListener('scroll', this.onScroll); }
+  setMenu(open){
+    const el = this.menuRef.current;
+    if (el){ el.style.maxHeight = open ? '440px' : '0px'; el.style.opacity = open ? '1' : '0'; }
+    this.setState({ menuOpen: open });
+  }
+  renderVals(){
+    return {
+      headerRef: this.headerRef,
+      menuRef: this.menuRef,
+      menuOpenStr: this.state.menuOpen ? 'true' : 'false',
+      toggleMenu: () => this.setMenu(!this.state.menuOpen),
+      closeMenu: () => this.setMenu(false)
+    };
+  }
+}
+</script>
+</body>
+</html>
